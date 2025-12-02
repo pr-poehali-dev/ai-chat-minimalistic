@@ -7,38 +7,82 @@ import { useNavigate } from "react-router-dom";
 const models = [
   {
     id: "gpt-4",
-    name: "GPT-4",
+    name: "GPT-4 Turbo",
     provider: "OpenAI",
-    description: "Самая мощная языковая модель от OpenAI",
-    cost: 5,
+    description: "Универсальная модель для любых задач",
+    cost: 3,
     free: false,
-    features: ["Длинный контекст", "Высокая точность", "Мультимодальность"],
+    category: "Универсальные",
+    features: ["128К контекст", "Высокая точность", "Анализ кода"],
   },
   {
     id: "claude-3",
-    name: "Claude 3 Opus",
+    name: "Claude 3.5 Sonnet",
     provider: "Anthropic",
-    description: "Продвинутая модель с акцентом на безопасность",
-    cost: 4,
+    description: "Лучшая для работы с текстами и документами",
+    cost: 3,
     free: false,
-    features: ["200К токенов", "Этичность", "Анализ документов"],
+    category: "Текст и документы",
+    features: ["200К токенов", "Глубокий анализ", "Этичность"],
   },
   {
     id: "gemini-pro",
-    name: "Gemini Pro",
+    name: "Gemini 1.5 Pro",
     provider: "Google",
-    description: "Мультимодальная модель от Google",
+    description: "Мультимодальная: текст, фото, видео",
+    cost: 2,
+    free: false,
+    category: "Мультимодальные",
+    features: ["Анализ изображений", "Работа с видео", "1M токенов"],
+  },
+  {
+    id: "gpt-4-vision",
+    name: "GPT-4 Vision",
+    provider: "OpenAI",
+    description: "Анализ изображений и скриншотов",
     cost: 3,
     free: false,
-    features: ["Изображения", "Видео", "Поиск в реальном времени"],
+    category: "Мультимодальные",
+    features: ["Распознавание объектов", "OCR", "Описание сцен"],
+  },
+  {
+    id: "deepseek",
+    name: "DeepSeek Coder",
+    provider: "DeepSeek",
+    description: "Специализированная модель для кода",
+    cost: 1,
+    free: false,
+    category: "Программирование",
+    features: ["Генерация кода", "Рефакторинг", "Поиск ошибок"],
+  },
+  {
+    id: "codestral",
+    name: "Codestral",
+    provider: "Mistral AI",
+    description: "Быстрая модель для кода",
+    cost: 1,
+    free: false,
+    category: "Программирование",
+    features: ["80+ языков", "Автодополнение", "32К контекст"],
+  },
+  {
+    id: "perplexity",
+    name: "Perplexity Search",
+    provider: "Perplexity",
+    description: "Поиск в интернете с источниками",
+    cost: 2,
+    free: false,
+    category: "Поиск и информация",
+    features: ["Актуальные данные", "Ссылки на источники", "Фактчекинг"],
   },
   {
     id: "llama-3",
     name: "Llama 3 70B",
     provider: "Meta",
-    description: "Открытая модель с отличным качеством",
+    description: "Мощная бесплатная модель",
     cost: 0,
     free: true,
+    category: "Бесплатные",
     features: ["Open source", "Быстрая", "Без ограничений"],
   },
   {
@@ -48,7 +92,18 @@ const models = [
     description: "Европейская open-source модель",
     cost: 0,
     free: true,
-    features: ["Мультиязычность", "Open source", "32К контекст"],
+    category: "Бесплатные",
+    features: ["Мультиязычность", "128К контекст", "Быстрый ответ"],
+  },
+  {
+    id: "qwen",
+    name: "Qwen 2.5",
+    provider: "Alibaba",
+    description: "Китайская модель с поддержкой русского",
+    cost: 0,
+    free: true,
+    category: "Бесплатные",
+    features: ["Мультиязычность", "32К контекст", "Open source"],
   },
 ];
 
@@ -94,7 +149,7 @@ const Models = () => {
           <p className="text-slate-400">Выберите модель для работы</p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {models.map((model) => (
             <Card
               key={model.id}

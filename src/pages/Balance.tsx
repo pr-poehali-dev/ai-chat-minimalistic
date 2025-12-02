@@ -7,11 +7,11 @@ import { useNavigate } from "react-router-dom";
 const plans = [
   {
     name: "Месячная подписка",
-    price: "990₽",
+    price: "290₽",
     period: "/мес",
     features: [
       "Все нейросети без ограничений",
-      "50 бонусных баллов ежедневно",
+      "100 бонусных баллов ежедневно",
       "Приоритетная обработка",
       "История всех чатов",
     ],
@@ -19,24 +19,26 @@ const plans = [
   },
   {
     name: "Годовая подписка",
-    price: "9990₽",
+    price: "2990₽",
     period: "/год",
     features: [
       "Все нейросети без ограничений",
-      "100 бонусных баллов ежедневно",
+      "150 бонусных баллов ежедневно",
       "Приоритетная обработка",
       "История всех чатов",
-      "Скидка 2 месяца",
+      "Экономия 480₽ в год",
     ],
     popular: true,
   },
 ];
 
 const pointsPackages = [
-  { amount: 100, price: 99, bonus: 0 },
-  { amount: 500, price: 449, bonus: 50 },
-  { amount: 1000, price: 799, bonus: 200 },
-  { amount: 5000, price: 3499, bonus: 1500 },
+  { amount: 50, price: 49, bonus: 0 },
+  { amount: 150, price: 129, bonus: 20 },
+  { amount: 300, price: 249, bonus: 50 },
+  { amount: 500, price: 399, bonus: 100 },
+  { amount: 1000, price: 749, bonus: 250 },
+  { amount: 2500, price: 1749, bonus: 750 },
 ];
 
 const Balance = () => {
@@ -142,7 +144,7 @@ const Balance = () => {
 
         <div>
           <h3 className="text-2xl font-bold text-white mb-6">Купить баллы</h3>
-          <div className="grid md:grid-cols-4 gap-4">
+          <div className="grid md:grid-cols-3 lg:grid-cols-6 gap-4">
             {pointsPackages.map((pkg, index) => (
               <Card
                 key={index}

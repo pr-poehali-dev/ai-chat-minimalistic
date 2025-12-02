@@ -15,11 +15,16 @@ interface Message {
 }
 
 const models = [
-  { id: "gpt-4", name: "GPT-4", cost: 5, free: false, provider: "OpenAI" },
-  { id: "claude-3", name: "Claude 3", cost: 4, free: false, provider: "Anthropic" },
-  { id: "gemini-pro", name: "Gemini Pro", cost: 3, free: false, provider: "Google" },
-  { id: "llama-3", name: "Llama 3", cost: 0, free: true, provider: "Meta" },
-  { id: "mistral", name: "Mistral", cost: 0, free: true, provider: "Mistral AI" },
+  { id: "gpt-4", name: "GPT-4 Turbo", cost: 3, free: false, provider: "OpenAI" },
+  { id: "claude-3", name: "Claude 3.5", cost: 3, free: false, provider: "Anthropic" },
+  { id: "gemini-pro", name: "Gemini 1.5 Pro", cost: 2, free: false, provider: "Google" },
+  { id: "gpt-4-vision", name: "GPT-4 Vision", cost: 3, free: false, provider: "OpenAI" },
+  { id: "deepseek", name: "DeepSeek Coder", cost: 1, free: false, provider: "DeepSeek" },
+  { id: "codestral", name: "Codestral", cost: 1, free: false, provider: "Mistral AI" },
+  { id: "perplexity", name: "Perplexity Search", cost: 2, free: false, provider: "Perplexity" },
+  { id: "llama-3", name: "Llama 3 70B", cost: 0, free: true, provider: "Meta" },
+  { id: "mistral", name: "Mistral Large", cost: 0, free: true, provider: "Mistral AI" },
+  { id: "qwen", name: "Qwen 2.5", cost: 0, free: true, provider: "Alibaba" },
 ];
 
 const Chat = () => {
